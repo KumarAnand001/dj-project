@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hydrabad Jobs Info..</h1>
+    <div class="images">
+        <img src="{% static 'images/hyd1.jpg' %}" alt="">
+        <img src="{% static 'images/hyd2.jpg' %}" alt="">
+        <img src="{% static 'images/hyd3.jpg' %}" alt="">
+    </div>
+    <br>
+
+    {% if jobs_list %}
+    <table id="tab">
+        <thead>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Eligibility</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </thead>
+
+        {% for jobs in jobs_list %}
+        <tr>
+            <td>{{jobs.date}}</td>
+            <td>{{jobs.company}}</td>
+            <td>{{jobs.title}}</td>
+            <td>{{jobs.eligibility}}</td>
+            <td>{{jobs.address}}</td>
+            <td>{{jobs.email}}</td>
+            <td>{{jobs.phonenumber}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>There is no jobs</p>
+    {% endif %}
+</body>
+</html>

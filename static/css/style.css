@@ -1,0 +1,17 @@
+jumbotron{
+
+    background: red;
+    margin: auto;
+    align-items: center;
+}
+
+images{
+    height: 200px;
+    width: 30%;
+    flex: auto;
+}
+
+table{
+
+    background: red;
+}
